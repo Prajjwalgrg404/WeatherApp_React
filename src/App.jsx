@@ -19,6 +19,9 @@ function App() {
       alert("Please enter a city name");
     }
   };
+
+  const currentDate = () => new Date().toUTCString().slice(0, 16);
+
   return (
     <>
       <div className="w-full h-screen bg-[#343D4C] flex items-center justify-end text-white">
@@ -27,10 +30,10 @@ function App() {
           className="w-[30%] h-[80%] absolute top-[5rem] left-[20rem] bg-red-300 rounded-2xl py-8 px-8 flex justify-between flex-col bg-contain"
         >
           <div>
-            <h2 className="text-[2.5rem] font-semibold">Tuesday</h2>
-            <h2 className="text-[1.5rem] font-medium">
+            <h2 className="text-[2rem] font-semibold">{currentDate()}</h2>
+            {/* <h2 className="text-[1.5rem] font-medium">
               {data.timezone ? data.timezone : "--"}
-            </h2>
+            </h2> */}
             <h2 className=" mt-5 text-[2.2rem] font-semibold">
               <i className="fa-solid fa-location-dot mr-2 text-white"></i>
               {data.name ? data.name : "--"},{data.sys? data.sys.country: "--"}
